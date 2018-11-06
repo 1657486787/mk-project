@@ -3,30 +3,28 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>mk-project</artifactId>
+        <artifactId>mk-zk-register</artifactId>
         <groupId>com.suns</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.suns</groupId>
-    <artifactId>mk-zookeeper</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>mk-zk-register-order</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <modules>
-        <module>mk-zk-register</module>
-    </modules>
 
-    <name>mk-zookeeper</name>
+    <name>mk-zk-register-order</name>
+    <!-- FIXME change it to the project's website -->
+    <url>http://www.example.com</url>
+
 
     <dependencies>
-        <!--zk start-->
         <dependency>
-            <groupId>org.apache.zookeeper</groupId>
-            <artifactId>zookeeper</artifactId>
-            <version>3.4.13</version>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
         </dependency>
-        <!--zk end-->
     </dependencies>
 
 </project>
