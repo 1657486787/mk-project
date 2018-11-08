@@ -15,6 +15,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <modules>
         <module>mk-zk-register</module>
+        <module>mk-zk-leader</module>
     </modules>
 
     <name>mk-zookeeper</name>
