@@ -40,7 +40,7 @@ public class OrderController {
     @RequestMapping("/getOrder/{id}")
     public Object getOrder(@PathVariable("id") String id){
         String result = loadBalance.choseServiceHost();
-        System.out.println("product 随机服务："+result);
+        System.out.println("即将访问product 随机服务："+result);
         String url ="http://"+result+"/product/getProduct/"+id;
         Product product = restTemplate.getForObject(url, Product.class);
         return new Order(id,"order_"+id,product);

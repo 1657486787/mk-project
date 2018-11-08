@@ -3,12 +3,12 @@
  * Package Name:com.suns.listener <br>
  *
  * @author mk <br>
- * Date:2018-11-6 10:26 <br>
+ * Date:2018-11-7 9:43 <br>
  */
 
 package com.suns.listener;
 
-import com.suns.utils.ZkNativeUtil;
+import com.suns.utils.ZkClientUtil;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
@@ -16,13 +16,13 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
 /**
- * ClassName: InitListener <br>
- * Description: zk原生客户端实现服务注册 <br>
+ * ClassName: ZkClientInitListener <br>
+ * Description: zkclient实现服务发现 <br>
  * @author mk
- * @Date 2018-11-6 10:26 <br>
+ * @Date 2018-11-7 9:43 <br>
  * @version
  */
-public class InitListener implements ServletContextListener {
+public class ZkClientInitListener implements ServletContextListener {
 
     @Value("${zookeeper.ip.port}")
     private String zookeeperConn;
@@ -32,7 +32,8 @@ public class InitListener implements ServletContextListener {
         //一定要加这句，不然启动报错：Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
         WebApplicationContextUtils.getRequiredWebApplicationContext(sce.getServletContext())
                 .getAutowireCapableBeanFactory().autowireBean(this);
-        ZkNativeUtil.init(zookeeperConn);
+
+        ZkClientUtil.init(zookeeperConn);
     }
 
     @Override

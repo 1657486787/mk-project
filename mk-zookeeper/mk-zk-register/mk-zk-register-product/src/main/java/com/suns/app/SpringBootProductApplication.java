@@ -9,6 +9,7 @@
 package com.suns.app;
 
 import com.suns.listener.InitListener;
+import com.suns.listener.ZkClientInitListener;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletListenerRegistrationBean;
@@ -31,7 +32,8 @@ public class SpringBootProductApplication {
     @Bean
     public ServletListenerRegistrationBean servletListenerRegistrationBean(){
         ServletListenerRegistrationBean servletListenerRegistrationBean = new ServletListenerRegistrationBean();
-        servletListenerRegistrationBean.setListener(new InitListener());
+//        servletListenerRegistrationBean.setListener(new InitListener());//zk原生客户端实现服务注册
+        servletListenerRegistrationBean.setListener(new ZkClientInitListener());//zkClient实现服务注册
         return servletListenerRegistrationBean;
     }
 }

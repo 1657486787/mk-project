@@ -9,6 +9,7 @@
 package com.suns.app;
 
 import com.suns.listener.InitListener;
+import com.suns.listener.ZkClientInitListener;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletListenerRegistrationBean;
@@ -33,7 +34,8 @@ public class SpringBootOrderApplication {
     @Bean
     public ServletListenerRegistrationBean tt(){
         ServletListenerRegistrationBean servletListenerRegistrationBean = new ServletListenerRegistrationBean();
-        servletListenerRegistrationBean.setListener(new InitListener());
+//        servletListenerRegistrationBean.setListener(new InitListener());
+        servletListenerRegistrationBean.setListener(new ZkClientInitListener());
         return servletListenerRegistrationBean;
     }
 
