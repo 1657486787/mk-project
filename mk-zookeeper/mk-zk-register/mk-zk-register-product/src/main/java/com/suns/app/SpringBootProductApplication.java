@@ -26,7 +26,7 @@ import org.springframework.context.annotation.Bean;
 public class SpringBootProductApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootProductApplication.class);
+        SpringApplication.run(SpringBootProductApplication.class,args);
     }
 
     @Bean

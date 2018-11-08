@@ -29,7 +29,7 @@ import org.springframework.context.annotation.Bean;
 public class SpringBootLeaderApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootLeaderApplication.class);
+        SpringApplication.run(SpringBootLeaderApplication.class,args);
     }
 
     @Bean

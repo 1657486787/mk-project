@@ -27,7 +27,7 @@ import org.springframework.web.client.RestTemplate;
 public class SpringBootOrderApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootOrderApplication.class);
+        SpringApplication.run(SpringBootOrderApplication.class,args);
     }
 
 
