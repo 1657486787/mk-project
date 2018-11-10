@@ -17,6 +17,7 @@
         <module>mk-zk-register</module>
         <module>mk-zk-leader</module>
         <module>mk-zk-config</module>
+        <module>mk-zk-lock</module>
     </modules>
 
     <name>mk-zookeeper</name>
