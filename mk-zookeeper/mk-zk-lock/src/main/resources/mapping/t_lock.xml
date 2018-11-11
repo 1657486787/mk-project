@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="com.suns.mysql.mapper.ILockDao">
+	<resultMap type="lockDo" id="lockResultMap">
+		<result property="id" column="id" />
+	</resultMap>
+
+	<select id="getById" parameterType="String" resultMap="lockResultMap">
+		SELECT * 
+		  FROM t_lock WHERE id = #{id}
+	</select>
+
+	<select id="selectLock" parameterType="Map" resultMap="lockResultMap">
+		SELECT * 
+		  FROM t_lock
+	</select>
+	
+	<insert id="addLock" parameterType="lockDo" keyProperty="id"
+		useGeneratedKeys="true" >
+		INSERT INTO t_lock(		id
+)
+		     VALUES (		#{id}
+)
+	</insert>
+	
+	<delete id="deleteById" parameterType="String" >
+		DELETE FROM t_lock WHERE id = #{id}
+	</delete>
+	
+</mapper>
+
